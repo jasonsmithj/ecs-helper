@@ -38,5 +38,10 @@ type ServiceConfig struct {
     CpuShares int `yaml:"cpu_shares,omitempty"`
     MemLimit int `yaml:"mem_limit,omitempty"`
     MemReservation int `yaml:"mem_reservation,omitempty"`
+    Secrets []SecretsConfig `yaml:"secrets,omitempty"`
 }
 
+type SecretsConfig struct {
+    ValueFrom string `yaml:"value_from,omitempty"`
+    Value string `yaml:"name,omitempty"`
+}
